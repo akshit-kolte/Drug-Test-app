@@ -15,10 +15,11 @@ liver_toxicity_index_U_L = st.number_input("Liver Toxicity Index (U/L)",min_valu
 blood_glucose_level_mg_dL = st.number_input("Blood Glucose Level (mg/dL)",min_value=0.0)
 #Make Pred
 if st.button('Drug Response Prediction'):
-	input_data=np.array([[drug_dosage_mg, systolic_blood_pressure_mmHg, heart_rate_BPM, liver_toxicity_index_U/L, blood_glucose_level_mg/dL]])
+	input_data=np.array([[drug_dosage_mg, systolic_blood_pressure_mmHg, heart_rate_BPM, liver_toxicity_index_U_L, blood_glucose_level_mg_dL]])
 	prediction=model.predict(input_data)[0]
 
 	st.success(f'Predict Diabetes:{prediction:.2f}')
+
 
 
 

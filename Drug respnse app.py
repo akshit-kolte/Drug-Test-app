@@ -17,4 +17,5 @@ Blood Glucose Level (mg/dL)=st.number_input("Blood Glucose Level (mg/dL)",min_va
 if st.button('Drug Response Prediction'):
 	input_data=np.array([[Drug Dosage (mg), Systolic Blood Pressure (mmHg), Heart Rate (BPM), Liver Toxicity Index (U/L), Blood Glucose Level (mg/dL)]])
 	prediction=model.predict(input_data)[0]
+
 	st.success(f'Predict Diabetes:{prediction:.2f}')

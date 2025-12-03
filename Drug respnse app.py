@@ -19,3 +19,4 @@ if st.button('Drug Response Prediction'):
 	prediction=model.predict(input_data)[0]
 
 	st.success(f'Predict Diabetes:{prediction:.2f}')
+

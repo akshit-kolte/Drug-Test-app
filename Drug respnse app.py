@@ -8,16 +8,17 @@ model=joblib.load(open("svm_rbf_model.joblib", 'rb'))
 
 st.title("Drug Response app")
 #Input feature
-drug_dosage_(mg)=st.number_input("Drug Dosage (mg)",min_value=0.0)
-systolic_blood_pressure_(mmHg)=st.number_input("Systolic Blood Pressure (mmHg)",min_value=0.0)
-heart_rate_(BPM)=st.number_input("Heart Rate (BPM)",min_value=0.0)
-liver_toxicity_index_(U/L)=st.number_input("Liver Toxicity Index (U/L)",min_value=0.0)
-blood_glucose_level_(mg/dL)=st.number_input("Blood Glucose Level (mg/dL)",min_value=0.0)
+drug_dosage_mg = st.number_input("Drug Dosage (mg)",min_value=0.0)
+systolic_blood_pressure_mmHg = st.number_input("Systolic Blood Pressure (mmHg)",min_value=0.0)
+heart_rate_BPM = st.number_input("Heart Rate (BPM)",min_value=0.0)
+liver_toxicity_index_U/L) = st.number_input("Liver Toxicity Index (U/L)",min_value=0.0)
+blood_glucose_level_mg/dL = st.number_input("Blood Glucose Level (mg/dL)",min_value=0.0)
 #Make Pred
 if st.button('Drug Response Prediction'):
-	input_data=np.array([[drug_dosage_(mg), systolic_blood_pressure_(mmHg), heart_rate_(BPM), liver_toxicity_index_(U/L), blood_glucose_level_(mg/dL)]])
+	input_data=np.array([[drug_dosage_mg, systolic_blood_pressure_mmHg, heart_rate_BPM, liver_toxicity_index_U/L, blood_glucose_level_mg/dL]])
 	prediction=model.predict(input_data)[0]
 
 	st.success(f'Predict Diabetes:{prediction:.2f}')
+
 
 

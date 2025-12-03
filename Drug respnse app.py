@@ -18,7 +18,8 @@ if st.button('Drug Response Prediction'):
 	input_data=np.array([[drug_dosage_mg, systolic_blood_pressure_mmHg, heart_rate_BPM, liver_toxicity_index_U_L, blood_glucose_level_mg_dL]])
 	prediction=model.predict(input_data)[0]
 
-	st.success(f'Predict Diabetes:{prediction:.2f}')
+	st.success(f'Predict Drug Response:{prediction:.2f}')
+
 
 
 
